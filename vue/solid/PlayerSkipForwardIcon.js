@@ -6,7 +6,9 @@ module.exports = function render(_ctx, _cache) {
     viewBox: "0 0 24 24",
     fill: "currentColor",
     "aria-hidden": "true",
-    "data-slot": "icon"
+    "data-slot": "icon",
+    height: "16px",
+    width: "16px"
   }, [
     _createElementVNode("path", { d: "M3 5v14a1 1 0 0 0 1.504.864l12-7a1 1 0 0 0 0-1.728l-12-7A1 1 0 0 0 3 5M20 4a1 1 0 0 1 .993.883L21 5v14a1 1 0 0 1-1.993.117L19 19V5a1 1 0 0 1 1-1" })
   ]))

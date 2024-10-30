@@ -1,6 +1,6 @@
 # Vue UI Icons
 
-Icons for the Vue UI components. Source from tabler.io.
+Icons for the Vue UI components. Sourced from [tabler.io](https://tabler.io/icons).
 
 # Installation
 

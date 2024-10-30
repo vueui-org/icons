@@ -1,8 +1,8 @@
 {
   "name": "@vueui-org/icons",
   "license": "MIT",
-  "version": "0.0.2",
-  "description": "Fork of Tabler Icons",
+  "version": "0.0.3",
+  "description": "Icons for Vue UI, forked/sourced from tabler.io",
   "keywords": [
     "vue",
     "web",

@@ -7,7 +7,7 @@
   "homepage": "https://vueui.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tailwindlabs/heroicons.git"
+    "url": "https://github.com/vueui-org/icons"
   },
   "files": [
     "outline",

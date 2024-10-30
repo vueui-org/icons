@@ -4,21 +4,12 @@ const { promisify } = require('util')
 const rimraf = promisify(require('rimraf'))
 const { compile: compileVue } = require('@vue/compiler-dom')
 const { dirname } = require('path')
-const { deprecated } = require('./deprecated')
 
 let transform = {
-  vue: (svg, componentName, format, isDeprecated) => {
+  vue: (svg, componentName, format) => {
     let { code } = compileVue(svg, {
       mode: 'module',
     })
-
-    // Add a deprecation warning to the component
-    if (isDeprecated) {
-      /** @type {string[]} */
-      let lines = code.split('\n')
-      lines.splice(2, 0, `/** @deprecated */`)
-      code = lines.join('\n')
-    }
 
     if (format === 'esm') {
       return code.replace('export function', 'export default function')
@@ -48,7 +39,6 @@ async function getIcons(style) {
       componentName: `${camelcase(file.replace(/\.svg$/, ''), {
         pascalCase: true,
       })}Icon`,
-      isDeprecated: deprecated.includes(file),
     }))
   )
 }
@@ -83,16 +73,14 @@ async function buildIcons(package, style, format) {
   let icons = await getIcons(style)
 
   await Promise.all(
-    icons.flatMap(async ({ componentName, svg, isDeprecated }) => {
-      let content = await transform[package](svg, componentName, format, isDeprecated)
+    icons.flatMap(async ({ componentName, svg }) => {
+      let content = await transform[package](svg, componentName, format)
 
       /** @type {string[]} */
       let types = []
 
       types.push(`import type { FunctionalComponent, HTMLAttributes, VNodeProps } from 'vue';`)
-      if (isDeprecated) {
-        types.push(`/** @deprecated */`)
-      }
+
       types.push(
         `declare const ${componentName}: FunctionalComponent<HTMLAttributes & VNodeProps>;`
       )

@@ -6,11 +6,13 @@ module.exports = function render(_ctx, _cache) {
     fill: "none",
     "stroke-linecap": "round",
     "stroke-linejoin": "round",
-    "stroke-width": "2",
     viewBox: "0 0 24 24",
+    "stroke-width": "1.5",
     stroke: "currentColor",
     "aria-hidden": "true",
-    "data-slot": "icon"
+    "data-slot": "icon",
+    height: "16px",
+    width: "16px"
   }, [
     _createElementVNode("path", { d: "M3 17a1 1 0 1 0 2 0 1 1 0 1 0-2 0M3 7a1 1 0 1 0 2 0 1 1 0 1 0-2 0M19 17a1 1 0 1 0 2 0 1 1 0 1 0-2 0M19 7a1 1 0 1 0 2 0 1 1 0 1 0-2 0M11 3a1 1 0 1 0 2 0 1 1 0 1 0-2 0M11 21a1 1 0 1 0 2 0 1 1 0 1 0-2 0" }),
     _createElementVNode("path", { d: "m12 21-8-4V7l8-4 8 4v10z" }),

@@ -1,10 +1,9 @@
 const fs = require('fs').promises
 const path = require('path')
-const { deprecated } = require('./deprecated')
 
 const srcPaths = {
-  solid: path.resolve(__dirname, '../src/24/solid/'),
-  outline: path.resolve(__dirname, '../src/24/outline/'),
+  solid: path.resolve(__dirname, '../src/solid/'),
+  outline: path.resolve(__dirname, '../src/outline/'),
 }
 
 async function main() {
@@ -21,10 +20,6 @@ async function main() {
 
       for (let file of current.files) {
         if (!other.files.includes(file)) {
-          // Ignore deprecated icons in micro
-          // They're not going to be added
-          if (other.name === 'micro' && deprecated.includes(file)) continue
-
           diffs.push({
             package: current.name,
             file: file,

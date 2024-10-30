@@ -1,9 +1,17 @@
 {
   "name": "@vueui-org/icons",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Fork of Tabler Icons",
-  "keywords": [],
+  "keywords": [
+    "vue",
+    "web",
+    "icons",
+    "svg",
+    "front-end",
+    "ui",
+    "ux"
+  ],
   "homepage": "https://vueui.org",
   "repository": {
     "type": "git",

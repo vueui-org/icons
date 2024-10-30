@@ -7,7 +7,7 @@ export default {
     {
       name: 'removeAttrs',
       params: {
-        attrs: ['stroke', 'path:stroke-width'],
+        attrs: ['stroke', 'stroke-width', 'path:stroke-width'],
       },
     },
     {
@@ -19,6 +19,8 @@ export default {
             stroke: 'currentColor',
             'aria-hidden': 'true',
             'data-slot': 'icon',
+            height: '16px',
+            width: '16px',
           },
         ],
       },

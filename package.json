@@ -1,0 +1,30 @@
+{
+  "name": "@vueui-org/icons",
+  "version": "1.0.0",
+  "description": "Icons for Vue UI, forked/sourced from tabler.io",
+  "files": [
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "Kars van Iersel",
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "lint": "node ./scripts/verify-names.js",
+    "build": "npm run build-24-outline && npm run build-24-solid && npm run build-vue",
+    "build-vue": "node ./scripts/build.js vue",
+    "build-24-outline": "rimraf ./outline ./optimized/outline && svgo --config=svgo.24.outline.mjs -f ./src/outline -o ./optimized/outline --pretty --indent=2",
+    "build-24-solid": "rimraf ./solid ./optimized/solid && svgo --config=svgo.24.solid.mjs -f ./src/solid -o ./optimized/solid --pretty --indent=2",
+    "release-channel": "node ./scripts/release-channel.js",
+    "release-notes": "node ./scripts/release-notes.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@svgr/core": "^5.5.0",
+    "@vue/compiler-dom": "^3.0.5",
+    "camelcase": "^6.0.0",
+    "prettier": "^2.8.7",
+    "rimraf": "^3.0.2",
+    "svgo": "^3.0.2"
+  },
+  "license": "ISC"
+}
